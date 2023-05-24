@@ -11,6 +11,7 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { DialogModule } from 'primeng/dialog';
+import { TagModule } from 'primeng/tag';
 
 
 @NgModule({
@@ -18,6 +19,6 @@ import { DialogModule } from 'primeng/dialog';
   imports: [
     CommonModule
   ],
-  exports: [CardModule, ButtonModule, InputTextModule, CheckboxModule, RadioButtonModule, DropdownModule, ListboxModule, TableModule, ToastModule, ToolbarModule, DialogModule]
+  exports: [CardModule, ButtonModule, InputTextModule, CheckboxModule, RadioButtonModule, DropdownModule, ListboxModule, TableModule, ToastModule, ToolbarModule, DialogModule,TagModule]
 })
 export class MaterialModule { }

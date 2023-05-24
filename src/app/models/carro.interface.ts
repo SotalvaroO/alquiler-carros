@@ -5,3 +5,4 @@ export interface Carro {
     image: string;
     capacidad: number;
 }
+

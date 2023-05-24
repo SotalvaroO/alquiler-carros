@@ -7,13 +7,17 @@ import { MasterTablesListComponent } from './components/master-tables-list/maste
 import { TableRecordsComponent } from './components/table-records/table-records.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule } from '@angular/forms';
+import { TableRecordsCarComponent } from './components/table-records-car/table-records-car.component';
+import { TableRecordsCarRentComponent } from './components/table-records-car-rent/table-records-car-rent.component';
 
 
 @NgModule({
   declarations: [
     MasterPageAdminComponent,
     MasterTablesListComponent,
-    TableRecordsComponent
+    TableRecordsComponent,
+    TableRecordsCarComponent,
+    TableRecordsCarRentComponent
   ],
   imports: [
     CommonModule,

@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./master/master.module').then(m => m.MasterModule)
   },
   {
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

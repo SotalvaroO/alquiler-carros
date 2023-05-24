@@ -1,0 +1,62 @@
+<div class="grid">
+    <div class="col-4 mx-8 px-8">
+
+        <div class="grid formgrid">
+            <div class="col-12 field mb-6"><span class="text-900 text-2xl block font-medium mb-5">Información de
+                    contacto</span><input id="email" placeholder="Email" type="text" class="p-inputtext w-full mb-4">
+            </div>
+            <div class="col-12 field mb-4"><span class="text-900 text-2xl block font-medium mb-5">Datos de
+                    ubicación</span><p-dropdown placeholder="Country / City" optionlabel="name" styleclass="w-full"
+                    class="p-element p-inputwrapper ng-untouched ng-pristine ng-valid">
+                    <div class="w-full p-dropdown p-component p-dropdown-clearable">
+                        <div class="p-hidden-accessible"><input type="text" readonly="" aria-haspopup="listbox"
+                                pautofocus="" role="combobox" class="p-element" placeholder="Country / City"
+                                aria-expanded="false"></div><!----><span
+                            class="p-dropdown-label p-inputtext p-placeholder ng-star-inserted">Country /
+                            City</span><!----><!----><!---->
+                        <div role="button" aria-label="dropdown trigger" aria-haspopup="listbox"
+                            class="p-dropdown-trigger"><span class="p-dropdown-trigger-icon pi pi-chevron-down"></span>
+                        </div><p-overlay class="p-element ng-tns-c24-215 ng-star-inserted"><!----></p-overlay>
+                    </div>
+                </p-dropdown></div>
+            <div class="col-12 lg:col-6 field mb-4"><input id="name" placeholder="Name" type="text"
+                    class="p-inputtext w-full"></div>
+            <div class="col-12 lg:col-6 field mb-4"><input id="lastname" placeholder="Last Name" type="text"
+                    class="p-inputtext w-full"></div>
+            <div class="col-12 field mb-4"><input id="address" placeholder="Address" type="text"
+                    class="p-inputtext w-full"></div>
+            <div class="col-12 field mb-4"><input id="address2" placeholder="Apartment, suite, etc" type="text"
+                    class="p-inputtext w-full"></div>
+            <div class="col-12 lg:col-6 field mb-4"><input id="pc" placeholder="Postal Code" type="text"
+                    class="p-inputtext w-full"></div>
+            <div class="col-12 lg:col-6 field mb-4"><input id="city" placeholder="City" type="text"
+                    class="p-inputtext w-full"></div>
+            <div class="col-12 lg:col-6 field mb-4"><p-checkbox name="checkbox-1" label="Save for next purchase"
+                    inputid="id" class="p-element text-900 ng-untouched ng-pristine ng-valid">
+                    <div class="p-checkbox p-component p-checkbox-checked">
+                        <div class="p-hidden-accessible"><input type="checkbox" value="undefined" id="id"
+                                name="checkbox-1" aria-checked="true"></div>
+                        <div class="p-checkbox-box p-highlight"><span class="p-checkbox-icon pi pi-check"></span></div>
+                    </div><label for="id" class="p-checkbox-label ng-star-inserted p-checkbox-label-active">Save for
+                        next purchase</label><!---->
+                </p-checkbox></div>
+            <div
+                class="col-12 flex flex-column lg:flex-row justify-content-center align-items-center lg:justify-content-end my-6">
+
+                <button pbutton="" pripple="" label="Continue to Shipping" icon="pi pi-fw pi-check"
+                    class="p-element p-ripple p-button-primary w-full lg:w-auto flex-order-1 lg:flex-order-2 p-button p-component"><span
+                        class="p-button-icon p-button-icon-left pi pi-fw pi-check" aria-hidden="true"></span><span
+                        class="p-button-label">Continuar al pago</span><span class="p-ink"></span></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="col">
+        <div><img class="w-6 border-round-xl" [src]="carroAlquiler.carro.image" alt=""></div>
+        <h1>{{carroAlquiler.carro.marca}} {{ carroAlquiler.carro.serie}}</h1>
+        <h2>Modelo {{carroAlquiler.modelo}}</h2>
+        <p>{{carroAlquiler.carro.capacidad}} Personas</p>
+        <p class="text-6xl"><b>{{200000|currency}}</b></p>
+    </div>
+
+</div>
