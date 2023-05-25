@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cliente, Genero, TipoDocumento } from 'src/app/models/cliente.interface';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,37 +11,39 @@ import { Component } from '@angular/core';
 })
 export class SignUpComponent {
 
+  public genders: Genero[] = ['Masculino', 'Femenino', 'Otros'];
+  public docTypes: TipoDocumento[] = ['CC', 'CE'];
+  public passwordRepetido: string = '';
 
-  public docTypes: DocType[] = [
-    {
-      name:'CC'
-    },
-    {
-      name:'TI'
-    },
-    {
-      name:'RC'
+  public clienteARegistrar: Cliente = {
+    apellido: '',
+    documento: '',
+    tipoDocumento: '',
+    genero: '',
+    licenciaUrl: '',
+    nombre: '',
+    password: '',
+    telefono: '',
+    username: '',
+    email: ''
+  };
+
+
+  constructor(private clienteService: ClienteService, private router: Router) {
+
+  }
+
+  registrar() {
+    if (this.passwordRepetido != this.clienteARegistrar.password) {
+      return;
     }
-  ];
-  public selectedDocType: DocType = {};
+    this.clienteService.registrarCliente(this.clienteARegistrar).subscribe({error: e=>{
+      return;
+    }})
+    this.router.navigate(['/home']);
 
-  public genders: Gender[] = [
-    {
-      name:'Masculino'
-    },
-    {
-      name:'Femenino'
-    },
-    {
-      name:'Helicóptero de combate'
-    }
-  ];
+  }
 
 }
 
-export interface DocType{
-  name?:string;
-}
-export interface Gender{
-  name?:string;
-}
+

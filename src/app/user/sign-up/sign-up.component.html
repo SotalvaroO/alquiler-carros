@@ -6,8 +6,8 @@
                 <hr>
                 <div class="mb-3">
 
-                    <p-dropdown placeholder="Seleccione el tipo de documento" [options]="docTypes"
-                        [style]="{'width':'100%'}" [(ngModel)]="selectedDocType" optionLabel="name"></p-dropdown>
+                    <p-dropdown class="w-auto" [style]="{'min-width':'100%'}" placeholder="Tipo documento"
+                        [options]="docTypes" [(ngModel)]="clienteARegistrar.tipoDocumento" optionLabel=""></p-dropdown>
 
                 </div>
                 <div class="mb-3">
@@ -15,7 +15,8 @@
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-id-card"></i>
                         </span>
-                        <input pInputText placeholder="Documento de identidad" />
+                        <input pInputText placeholder="Documento de identidad"
+                            [(ngModel)]="clienteARegistrar.documento" />
                     </div>
                 </div>
                 <div class="mb-3">
@@ -24,7 +25,7 @@
                             <i class="pi 
                             pi-user-plus"></i>
                         </span>
-                        <input pInputText placeholder="Nombre" />
+                        <input pInputText placeholder="Nombre" [(ngModel)]="clienteARegistrar.nombre" />
                     </div>
                 </div>
                 <div class="mb-3">
@@ -33,21 +34,31 @@
                             <i class="pi 
                             pi-user-plus"></i>
                         </span>
-                        <input pInputText placeholder="Apellido" />
+                        <input pInputText placeholder="Apellido" [(ngModel)]="clienteARegistrar.apellido" />
                     </div>
                 </div>
                 <div class="mb-3">
 
                     <p-dropdown placeholder="Seleccione su género" [options]="genders" [style]="{'width':'100%'}"
-                        [(ngModel)]="selectedDocType" optionLabel="name"></p-dropdown>
+                        [(ngModel)]="clienteARegistrar.genero" optionLabel=""></p-dropdown>
 
+                </div>
+                <div class="mb-3">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-phone"></i>
+                        </span>
+                        <input pInputText placeholder="Teléfono"
+                            [(ngModel)]="clienteARegistrar.telefono" />
+                    </div>
                 </div>
                 <div class="mb-3">
                     <div class="p-inputgroup">
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-id-card"></i>
                         </span>
-                        <input pInputText placeholder="Url de la licencia" />
+                        <input pInputText placeholder="Url de la licencia"
+                            [(ngModel)]="clienteARegistrar.licenciaUrl" />
                     </div>
                 </div>
                 <div class="mb-3">
@@ -55,7 +66,7 @@
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-user"></i>
                         </span>
-                        <input pInputText placeholder="Username" />
+                        <input pInputText placeholder="Username" [(ngModel)]="clienteARegistrar.username" />
                     </div>
                 </div>
                 <div class="mb-3">
@@ -63,7 +74,7 @@
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-envelope"></i>
                         </span>
-                        <input pInputText placeholder="Email" />
+                        <input pInputText placeholder="Email" [(ngModel)]="clienteARegistrar.email" />
                     </div>
                 </div>
                 <div class="mb-3">
@@ -71,7 +82,8 @@
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-lock"></i>
                         </span>
-                        <input type="password" pInputText placeholder="Contraseña" />
+                        <input type="password" pInputText placeholder="Contraseña"
+                            [(ngModel)]="clienteARegistrar.password" />
                     </div>
                 </div>
                 <div class="mb-3">
@@ -79,13 +91,14 @@
                         <span class="p-inputgroup-addon">
                             <i class="pi pi-lock"></i>
                         </span>
-                        <input type="password" pInputText placeholder="Repita la contraseña" />
+                        <input type="password" pInputText placeholder="Repita la contraseña"
+                            [(ngModel)]="passwordRepetido" />
                     </div>
                 </div>
                 <div class="flex align-items-center justify-content-center m-2">
-                    <button pButton label="Iniciar Sesión" style="width: 100%;"></button>
+                    <button pButton label="Registrarse" style="width: 100%;" (click)="registrar()"></button>
                 </div>
-                <label for="">Ya estás registrado? <a routerLink="/auth/sign-up"><b>Iniciar Sesión</b></a></label>
+                <label for="">Ya estás registrado? <a routerLink="/auth/login"><b>Iniciar Sesión</b></a></label>
             </p-card>
 
         </div>
